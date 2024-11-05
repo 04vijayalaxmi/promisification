@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Example</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <div>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+    </div>
+    <div>
+        <button id="addBtn">Add</button>
+        <button id="subtractBtn">Subtract</button>
+        <button id="multiplyBtn">Multiply</button
+        <button id="divideBtn">Divide</button>
+    </div>
+    <h2>Result: <span id="result"></span></h2>
+
+    <script type="module">
+        import { add, subtract, multiply, divide } from './module.js';
+
+        document.getElementById('addBtn').onclick = () => {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = add(num1, num2);
+        };
+
+        document.getElementById('subtractBtn').onclick = () => {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = subtract(num1, num2);
+        };
+
+        document.getElementById('multiplyBtn').onclick = () => {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = multiply(num1, num2);
+        };
+
+        document.getElementById('divideBtn').onclick = () => {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            try {
+                document.getElementById('result').innerText = divide(num1, num2);
+            } catch (error) {
+                document.getElementById('result').innerText = error.message;
+            }
+        };
+    </script>
+</body>
+</html>

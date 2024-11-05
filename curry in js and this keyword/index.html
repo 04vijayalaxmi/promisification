@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURRY IN JS</title>
+</head>
+<body>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!--
+
+function Crud() {
+    const [itemData,setitemData] = useState({name :'', discription:''})
+    const [items,setitems] = useState([])
+    const [isediting,setediting] = useState(false)
+    const [edititemid,setedititemdid] = useState(null)
+   
+    const handlechange = (e) =>{
+        
+       const {name,value} = e.target
+
+       setitemData({...itemData,[name]:value});
+    }
+    const handlesubmision = (e) =>{
+
+        e.preventDefault();
+        if(isediting){
+e.preventDefault();
+        if(isediting){
+            setitems(items.map(item =>(item.id === edititemid ? {...item,...itemData} : item )))
+            setediting(false);
+            setedititemdid(null);
+        }
+        else{
+            setitems([...items, {...itemData, id:Date.now()}])
+        }
+        setitemData({name:'',discription:''})
+
+    }
+
+    const edititem =(item) =>{
+        setitemData({name:item.name, discription:item.discription})
+        setediting(true)
+        seteditite
+Gopi Gopi
+7:10 PM
+setediting(true)
+        setedititemdid(item.id)
+    }
+    const deleteitem =(id) =>{
+        console.log(id)
+         setitems(items.filter(item => item.id !== id))
+    }
+    
+    return(
+        <div >
+            <h1>CRUD Operations</h1>
+        <form  onSubmit={handlesubmision}>
+        <input type="text" name="name" placeholder="Name" onChange={handlechange}  required />
+
+        <input type="text" name="discription" placeholder="Discription" onChange={handlechange} required />
+<button type="submit" > {isediting ? 'update' : 'add' }</button>
+
+        </form>
+
+            <div>
+                <h2>Items</h2>
+        <ul>
+            {
+                items.map((item) =>(
+                    <li>
+                        <span>{item.name} : {item.discription}</span>
+                        <button onClick={()=> edititem(item)}>
+                            Edit
+                        </button>
+                        <button onClick={() => deleteitem(item.id)}>De
+<span>{item.name} : {item.discription}</span>
+                        <button onClick={()=> edititem(item)}>
+                            Edit
+                        </button>
+                        <button onClick={() => deleteitem(item.id)}>Delete</button>
+                    </li>
+                ))
+            }
+        </ul>
+
+            </div>
+
+        </div>
+    )
+}
+
+export default Crud  -->
